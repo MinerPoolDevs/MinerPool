@@ -2,7 +2,7 @@ pipeline:
     ssh:
         image: appleboy/drone-ssh
         host: 172.31.25.87
-        username: root
-        key: SSH_KEY
+        username: ubuntu
+        key: ${SSH_KEY}
         script:
             - echo test
