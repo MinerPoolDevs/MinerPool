@@ -7,7 +7,8 @@ pipeline:
       - eth.minerpool.co
     username: ubuntu
     key: ${SSH_KEY}
-    target: /mnt/tmp
+    target: /mnt/tmp/
+    source: config_dbix.json
 
   ssh:
     image: appleboy/drone-ssh
