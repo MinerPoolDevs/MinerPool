@@ -1,4 +1,13 @@
 pipeline:
+  eth:
+    image: appleboy/drone-scp
+    host: eth.minerpool.co
+    username: ubuntu
+    key: ${SSH_KEY}
+    secrets: [ SSH_KEY ]
+    target: /mnt/open-ethereum-pool-master/
+    source: config_eth.json
+
   etc:
     image: appleboy/drone-scp
     host: etc.minerpool.co
@@ -7,6 +16,15 @@ pipeline:
     secrets: [ SSH_KEY ]
     target: /mnt/open-ethereum-pool-master/
     source: config_etc.json
+
+  dbix:
+    image: appleboy/drone-scp
+    host: dbix.minerpool.co
+    username: ubuntu
+    key: ${SSH_KEY}
+    secrets: [ SSH_KEY ]
+    target: /mnt/open-ethereum-pool-master/
+    source: config_dbix.json
 
   restart:
     image: appleboy/drone-ssh
