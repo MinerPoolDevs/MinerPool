@@ -6,4 +6,4 @@ pipeline:
       key: ${SSH_KEY}
       port: 22
       script:
-        - echo testing >/tmp/test1
+        - /usr/local/bin/test.sh
