@@ -16,4 +16,4 @@ pipeline:
     username: ubuntu
     key: ${SSH_KEY}
     script:
-      - systemctl restart oepool
+      - /bin/systemctl restart oepool
