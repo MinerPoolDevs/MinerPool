@@ -4,5 +4,6 @@ pipeline:
         host: 172.31.25.87
         username: ubuntu
         key: ${SSH_KEY}
+        port: 22
         script:
             - echo testing
