@@ -15,5 +15,6 @@ pipeline:
       - dbix.minerpool.co
     username: ubuntu
     key: ${SSH_KEY}
+    secrets: [ SSH_KEY ]
     script:
       - /bin/systemctl restart oepool
