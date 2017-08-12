@@ -81,9 +81,9 @@
 	},
 
 	"unlocker": {
-		"enabled": false,
+		"enabled": true,
 		"poolFee": 1.0,
-		"poolFeeAddress": "0x7500b8c1bb501ce073f4afd2b4742e7dd38ab71b",
+		"poolFeeAddress": "",
 		"donate": false,
 		"depth": 120,
 		"immatureDepth": 20,
@@ -94,7 +94,7 @@
 	},
 
 	"payouts": {
-		"enabled": false,
+		"enabled": true,
 		"requirePeers": 25,
 		"interval": "120m",
 		"daemon": "http://127.0.0.1:8545",
