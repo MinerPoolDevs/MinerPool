@@ -1,11 +1,11 @@
 pipeline:
-  etc:
-    image: appleboy/drone-scp
-    host: etc.minerpool.co
-    username: ubuntu
-    key: ${SSH_KEY}
-    target: /mnt/open-ethereum-pool-master/config.json
-    source: config_etc.json
+#  etc:
+#    image: appleboy/drone-scp
+#    host: etc.minerpool.co
+#    username: ubuntu
+#    key: ${SSH_KEY}
+#    target: /mnt/open-ethereum-pool-master/config.json
+#    source: config_etc.json
 
   restart:
     image: appleboy/drone-ssh
