@@ -1,0 +1,7 @@
+pipeline:
+    ssh:
+        image: appleboy/drone-ssh
+        host: 172.31.25.87
+        username: root
+        script:
+            - echo test
