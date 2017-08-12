@@ -7,7 +7,7 @@ pipeline:
     target: /mnt/open-ethereum-pool-master/config.json
     source: config_etc.json
 
-  ssh:
+  restart:
     image: appleboy/drone-ssh
     host:
       - eth.minerpool.co
