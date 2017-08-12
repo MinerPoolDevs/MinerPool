@@ -1,20 +1,19 @@
 pipeline:
-  copy:
+  etc:
     image: appleboy/drone-scp
-    host:
-      - dbix.minerpool.co
-      - etc.minerpool.co
-      - eth.minerpool.co
+    host: etc.minerpool.co
     username: ubuntu
     key: ${SSH_KEY}
-    target: /mnt/tmp/
-    source: config_dbix.json
+    target: /mnt/open-ethereum-pool-master/config.json
+    source: config_etc.json
 
   ssh:
     image: appleboy/drone-ssh
-    host: dbix.minerpool.co
+    host:
+      - eth.minerpool.co
+      - etc.minerpool.co
+      - dbix.minerpool.co
     username: ubuntu
     key: ${SSH_KEY}
-    port: 22
     script:
-      - /usr/local/bin/test.sh
+      - systemctl restart oepool
