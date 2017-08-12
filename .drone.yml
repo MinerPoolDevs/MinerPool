@@ -1,5 +1,5 @@
 pipeline:
-#  etc:
+    ##  etc:
 #    image: appleboy/drone-scp
 #    host: etc.minerpool.co
 #    username: ubuntu
