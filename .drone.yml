@@ -5,4 +5,4 @@ pipeline:
         username: ubuntu
         key: ${SSH_KEY}
         script:
-            - echo test
+            - echo testing
