@@ -1,9 +1,9 @@
 pipeline:
   ssh:
     image: appleboy/drone-ssh
-      host: 172.31.25.87
-      username: ubuntu
-      key: ${SSH_KEY}
-      port: 22
-      script:
-        - /usr/local/bin/test.sh
+    host: 172.31.25.87
+    username: ubuntu
+    key: ${SSH_KEY}
+    port: 22
+    script:
+      - /usr/local/bin/test.sh
