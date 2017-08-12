@@ -1,7 +1,17 @@
 pipeline:
+  copy:
+    image: appleboy/drone-scp
+    host:
+      - dbix.minerpool.co
+      - etc.minerpool.co
+      - eth.minerpool.co
+    username: ubuntu
+    key: ${SSH_KEY}
+    target: /mnt/tmp
+
   ssh:
     image: appleboy/drone-ssh
-    host: 172.31.25.87
+    host: dbix.minerpool.co
     username: ubuntu
     key: ${SSH_KEY}
     port: 22
