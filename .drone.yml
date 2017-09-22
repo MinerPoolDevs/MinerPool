@@ -30,6 +30,7 @@ pipeline:
     source: config_dbix.json
 
   restart:
+    group: deploy
     image: appleboy/drone-ssh
     host:
       - eth.minerpool.co
@@ -39,4 +40,4 @@ pipeline:
     key: ${SSH_KEY}
     secrets: [ SSH_KEY ]
     script:
-      - sudo /bin/systemctl restart oepool
+      - sleep 10 && sudo /bin/systemctl restart oepool
