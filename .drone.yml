@@ -1,5 +1,6 @@
 pipeline:
   eth:
+    group: deploy
     image: appleboy/drone-scp
     host: eth.minerpool.co
     username: ubuntu
@@ -9,6 +10,7 @@ pipeline:
     source: config_eth.json
 
   etc:
+    group: deploy
     image: appleboy/drone-scp
     host: etc.minerpool.co
     username: ubuntu
@@ -18,6 +20,7 @@ pipeline:
     source: config_etc.json
 
   dbix:
+    group: deploy
     image: appleboy/drone-scp
     host: dbix.minerpool.co
     username: ubuntu
