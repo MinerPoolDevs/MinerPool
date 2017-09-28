@@ -7,7 +7,7 @@ pipeline:
     key: ${SSH_KEY}
     secrets: [ SSH_KEY ]
     target: /mnt/open-ethereum-pool-master/
-    source: config_eth.json
+    source: eth_*.json
 
   etc:
     group: deploy
@@ -17,7 +17,7 @@ pipeline:
     key: ${SSH_KEY}
     secrets: [ SSH_KEY ]
     target: /mnt/open-ethereum-pool-master/
-    source: config_etc.json
+    source: etc_*.json
 
   dbix:
     group: deploy
@@ -27,7 +27,7 @@ pipeline:
     key: ${SSH_KEY}
     secrets: [ SSH_KEY ]
     target: /mnt/open-ethereum-pool-master/
-    source: config_dbix.json
+    source: dbix_*.json
 
   restart:
     group: deploy
@@ -40,4 +40,4 @@ pipeline:
     key: ${SSH_KEY}
     secrets: [ SSH_KEY ]
     script:
-      - sleep 10 && sudo /bin/systemctl restart oepool
+      - sleep 10 && sudo /bin/systemctl restart oepool oeapi oepayout oeunlock
