@@ -11,7 +11,7 @@
 		"behindReverseProxy": false,
 		"blockRefreshInterval": "120ms",
 		"stateUpdateInterval": "3s",
-		"difficulty": 6000000000,
+		"difficulty": 5000000000, // 40MH miners not receiving jobs for 10 min intervals
 		"hashrateExpiration": "3h",
 
 		"healthCheck": true,
