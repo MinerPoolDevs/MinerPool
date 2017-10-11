@@ -1,6 +1,6 @@
 {
 	"threads": 2,
-	"coin": "etc",
+	"coin": "dbix",
 	"name": "main",
 
 	"proxy": {
@@ -46,16 +46,29 @@
 		}
 	},
 
+	"api": {
+		"enabled": true,
+		"purgeOnly": false,
+		"purgeInterval": "10m",
+		"listen": "0.0.0.0:8080",
+		"statsCollectInterval": "5s",
+		"hashrateWindow": "30m",
+		"hashrateLargeWindow": "3h",
+		"luckWindow": [64, 128, 256],
+		"payments": 30,
+		"blocks": 50
+	},
+
 	"upstreamCheckInterval": "5s",
 	"upstream": [
 		{
 			"name": "main",
-			"url": "http://127.0.0.1:8545",
+			"url": "http://127.0.0.1:7565",
 			"timeout": "10s"
 		},
 		{
 			"name": "backup",
-			"url": "http://127.0.0.2:8545",
+			"url": "http://127.0.0.2:7565",
 			"timeout": "10s"
 		}
 	],
@@ -65,6 +78,33 @@
 		"poolSize": 10,
 		"database": 0,
 		"password": ""
+	},
+
+	"unlocker": {
+		"enabled": true,
+		"poolFee": 1.0,
+		"poolFeeAddress": "",
+		"donate": false,
+		"depth": 120,
+		"immatureDepth": 20,
+		"keepTxFees": false,
+		"interval": "10m",
+		"daemon": "http://127.0.0.1:7565",
+		"timeout": "10s"
+	},
+
+	"payouts": {
+		"enabled": true,
+		"requirePeers": 25,
+		"interval": "120m",
+		"daemon": "http://127.0.0.1:7565",
+		"timeout": "10s",
+		"address": "0x0",
+		"gas": "21000",
+		"gasPrice": "50000000000",
+		"autoGas": true,
+		"threshold": 150000000,
+		"bgsave": false
 	},
 
 	"newrelicEnabled": false,
